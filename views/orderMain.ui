@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>643</width>
+    <height>437</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ENCARGOS</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(22, 71, 115);</string>
+  </property>
+  <widget class="QPushButton" name="buttonInsert">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>380</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(242, 242, 240);</string>
+   </property>
+   <property name="text">
+    <string>CREAR PEDIDO</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buttonReturn">
+   <property name="geometry">
+    <rect>
+     <x>331</x>
+     <y>380</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(242, 242, 240);</string>
+   </property>
+   <property name="text">
+    <string>REGRESAR</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>20</y>
+     <width>281</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(242, 242, 240);</string>
+   </property>
+   <property name="text">
+    <string>ENCARGOS DE CLIENTES</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableOrder">
+   <property name="geometry">
+    <rect>
+     <x>26</x>
+     <y>160</y>
+     <width>591</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: rgb(242, 242, 240);
+</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="textName">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>100</y>
+     <width>351</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 6px;
+background-color: rgb(242, 242, 240);
+border: 1px solid;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>NOMBRE DEL CLIENTE</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dateOrder">
+   <property name="geometry">
+    <rect>
+     <x>469</x>
+     <y>100</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 6px;
+background-color: rgb(242, 242, 240);
+border: 1px solid;</string>
+   </property>
+   <property name="displayFormat">
+    <string>dd/MM/yyyy</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

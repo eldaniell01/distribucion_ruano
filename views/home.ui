@@ -10,16 +10,22 @@
     <height>387</height>
    </rect>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>645</width>
+    <height>387</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(22, 71, 115);</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="buttonOrder">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>200</x>
      <y>140</y>
      <width>241</width>
      <height>51</height>
@@ -35,13 +41,13 @@
     <string notr="true">background-color: rgb(202, 202, 202);</string>
    </property>
    <property name="text">
-    <string>PEDIDOS</string>
+    <string>ENCARGOS DE CLIENTES</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>200</x>
      <y>210</y>
      <width>241</width>
      <height>51</height>
@@ -63,7 +69,7 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>200</x>
      <y>280</y>
      <width>241</width>
      <height>51</height>

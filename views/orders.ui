@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>712</width>
+    <height>569</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CREAR PEDIDO</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(22, 71, 115);</string>
+  </property>
+  <widget class="QLineEdit" name="textName">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>381</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 6px;
+background-color: rgb(242, 242, 240);
+border: 1px solid;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>NOMBRE DEL CLIENTE</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="textPhone">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>20</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 6px;
+background-color: rgb(242, 242, 240);
+border: 1px solid;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>TELEFONO</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="textMoto">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>76</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 6px;
+background-color: rgb(242, 242, 240);
+border: 1px solid;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>MOTO</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="textMarca">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>76</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 6px;
+background-color: rgb(242, 242, 240);
+border: 1px solid;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>MARCA</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textDescription">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>130</y>
+     <width>651</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 6px;
+background-color: rgb(242, 242, 240);
+border: 1px solid;</string>
+   </property>
+   <property name="placeholderText">
+    <string>DESCRIPCION</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="textYear">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>80</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 6px;
+background-color: rgb(242, 242, 240);
+border: 1px solid;</string>
+   </property>
+   <property name="maxVisibleItems">
+    <number>50</number>
+   </property>
+   <property name="placeholderText">
+    <string>AÑO</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="textSalesmen">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>230</y>
+     <width>651</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 6px;
+background-color: rgb(242, 242, 240);
+border: 1px solid;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>VENDEDOR</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buttonPhotos">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>290</y>
+     <width>231</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(242, 242, 240);</string>
+   </property>
+   <property name="text">
+    <string>FOTOS</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableR">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>350</y>
+     <width>651</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 6px;
+background-color: rgb(242, 242, 240);
+border: 1px solid;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buttonInsert">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>510</y>
+     <width>231</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(242, 242, 240);</string>
+   </property>
+   <property name="text">
+    <string>AGREGAR</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buttonReturn">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>510</y>
+     <width>231</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(242, 242, 240);</string>
+   </property>
+   <property name="text">
+    <string>REGRESAR</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
