@@ -157,6 +157,12 @@ border: 1px solid;</string>
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">border-radius: 6px;
 background-color: rgb(242, 242, 240);

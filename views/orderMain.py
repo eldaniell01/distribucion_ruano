@@ -3,6 +3,8 @@ import os
 from PyQt6 import uic
 from PyQt6.QtWidgets import QMainWindow, QWidget, QMessageBox, QTableWidgetItem, QFileDialog
 from PyQt6.QtGui import QFont
+
+from .order import Order
 from datetime import datetime
 
 class OrderMain(QMainWindow):
@@ -12,6 +14,7 @@ class OrderMain(QMainWindow):
         self.order.show()
         self.order.dateOrder.setDate(datetime.now().date())
         self.order.dateOrder.editingFinished.connect(self.searchDate)
+        self.order.buttonInsert.clicked.connect(self.showOrder)
         self.showTable()
         
     def searchDate(self):
@@ -23,3 +26,7 @@ class OrderMain(QMainWindow):
         self.order.tableOrder.setColumnCount(len(columns))
         for column, name in enumerate(columns):
             self.order.tableOrder.setHorizontalHeaderItem(column, QTableWidgetItem(name))
+    
+    def showOrder(self):
+        self.orderC = Order()
+        self.order.close()
