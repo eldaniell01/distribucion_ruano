@@ -4,8 +4,8 @@ from PyQt6 import uic
 from PyQt6.QtWidgets import QMainWindow, QWidget, QMessageBox, QTableWidgetItem, QFileDialog
 from PyQt6.QtGui import QFont
 
-from db.db_c import CMysql
-from datetime import datetime
+from db.querys import Querys
+from datetime import date
 
 class Order(QMainWindow):
     def __init__(self):
@@ -14,8 +14,6 @@ class Order(QMainWindow):
         self.orderC.show()
         self.orderC.buttonPhotos.clicked.connect(self.openImagen)
         self.orderC.buttonInsert.clicked.connect(self.insertOrder)
-        self.con = CMysql()
-        self.con.connection()
         self.showTable()
         self.showOptions()
     
@@ -38,20 +36,26 @@ class Order(QMainWindow):
         
     def insertOrder(self):
         self.name = self.orderC.textName.text()
-        self.phone = self.orderC.textPhone.setMaxLength(8)
+        self.phone = int(self.orderC.textPhone.text())
         self.moto = self.orderC.textMoto.text()
         self.modelo = self.orderC.textYear.currentText()
         self.marca = self.orderC.textMarca.text()
         self.description = self.orderC.textDescription.toPlainText()
         self.salesmen = self.orderC.textSalesmen.text()
         self.state = False
-        if not self.name or self.phone or self.moto:
-            print('hay campos vacios')
-        else:
+        
+        if self.name and self.phone and self.moto:
+            #self.insertCliente = Querys()
+            #self.insertCliente.insertCliente(self.name, self.phone)
+            fecha = date.today()
+            print(fecha)
+            idc = Querys()
+            data = idc.selectCliente()
+            print(data[0])
             row_count = self.orderC.tableR.rowCount()
             self.orderC.tableR.insertRow(row_count)
             self.orderC.tableR.setItem(row_count, 1, QTableWidgetItem(self.name))
-            self.orderC.tableR.setItem(row_count, 2, QTableWidgetItem(self.phone))
+            self.orderC.tableR.setItem(row_count, 2, QTableWidgetItem(str(self.phone)))
             self.orderC.tableR.setItem(row_count, 3, QTableWidgetItem(self.moto))
             self.orderC.tableR.setItem(row_count, 4, QTableWidgetItem(self.modelo))
             self.orderC.tableR.setItem(row_count, 5, QTableWidgetItem(self.marca))
@@ -65,4 +69,5 @@ class Order(QMainWindow):
             self.orderC.textMarca.setText('')
             self.orderC.textDescription.setPlainText('')
             self.orderC.textSalesmen.setText('') 
-        
+        else:    
+            print(self.name)

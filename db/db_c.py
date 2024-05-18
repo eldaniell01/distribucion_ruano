@@ -6,7 +6,7 @@ class CMysql:
         self.host = 'localhost'
         self.user = 'root'
         self.password = '123'
-        self.data_base = 'distribucion'
+        self.data_base = 'distribucion_r'
         self.conexion = None
         self.cursor = None
     
