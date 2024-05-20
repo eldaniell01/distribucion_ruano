@@ -16,6 +16,7 @@ class Order(QMainWindow):
         self.orderC.buttonInsert.clicked.connect(self.insertOrder)
         self.showTable()
         self.showOptions()
+        self.img = []
     
     def showTable(self):
         columns = ['ID', 'CLIENTE', 'TELEFONO', 'MOTO', 'MODELO', 'MARCA', 'DESCRIPCION', 'VENDEDOR', 'ESTADO']
@@ -32,17 +33,18 @@ class Order(QMainWindow):
     def openImagen(self):
         folder = QFileDialog()
         folder_path, __= folder.getOpenFileNames(None, 'Cargar imagen', '', 'JPEG (*.jpg)')
-        print(folder_path)
+        self.img = folder_path
         
     def insertOrder(self):
+        print(self.img)
         self.name = self.orderC.textName.text()
         self.phone = int(self.orderC.textPhone.text())
         self.moto = self.orderC.textMoto.text()
-        self.modelo = self.orderC.textYear.currentText()
+        self.modelo = int(self.orderC.textYear.currentText())
         self.marca = self.orderC.textMarca.text()
         self.description = self.orderC.textDescription.toPlainText()
         self.salesmen = self.orderC.textSalesmen.text()
-        self.state = False
+        self.state = 0
         
         if self.name and self.phone and self.moto:
             #self.insertCliente = Querys()
@@ -50,14 +52,19 @@ class Order(QMainWindow):
             fecha = date.today()
             print(fecha)
             idc = Querys()
-            data = idc.selectCliente()
+            data = idc.selectDetailOrder()
+            inf = Querys()
+            for ruta_imagen in self.img:
+                with open(ruta_imagen, 'rb') as file:
+                    imagen_binaria = file.read()
+                    inf.insertImages(imagen_binaria, data[0])
             print(data[0])
             row_count = self.orderC.tableR.rowCount()
             self.orderC.tableR.insertRow(row_count)
             self.orderC.tableR.setItem(row_count, 1, QTableWidgetItem(self.name))
             self.orderC.tableR.setItem(row_count, 2, QTableWidgetItem(str(self.phone)))
             self.orderC.tableR.setItem(row_count, 3, QTableWidgetItem(self.moto))
-            self.orderC.tableR.setItem(row_count, 4, QTableWidgetItem(self.modelo))
+            self.orderC.tableR.setItem(row_count, 4, QTableWidgetItem(str(self.modelo)))
             self.orderC.tableR.setItem(row_count, 5, QTableWidgetItem(self.marca))
             self.orderC.tableR.setItem(row_count, 6, QTableWidgetItem(self.description))
             self.orderC.tableR.setItem(row_count, 7, QTableWidgetItem(self.salesmen))
