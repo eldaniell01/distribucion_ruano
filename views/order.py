@@ -47,18 +47,22 @@ class Order(QMainWindow):
         self.state = 0
         
         if self.name and self.phone and self.moto:
+            detail= {}
+            query = Querys()
             #self.insertCliente = Querys()
             #self.insertCliente.insertCliente(self.name, self.phone)
             fecha = date.today()
-            print(fecha)
             idc = Querys()
-            data = idc.selectDetailOrder()
-            inf = Querys()
-            for ruta_imagen in self.img:
-                with open(ruta_imagen, 'rb') as file:
-                    imagen_binaria = file.read()
-                    inf.insertImages(imagen_binaria, data[0])
-            print(data[0])
+            print(self.img)
+            """for ruta_imagen in self.img:
+                if os.path.exists(ruta_imagen):
+                    with open(ruta_imagen, 'rb') as file:
+                        print(ruta_imagen)
+                        imagen_binaria = file.read()
+                        inf.insertImages(imagen_binaria, data[0])
+                else: 
+                    print('error')"""
+            
             row_count = self.orderC.tableR.rowCount()
             self.orderC.tableR.insertRow(row_count)
             self.orderC.tableR.setItem(row_count, 1, QTableWidgetItem(self.name))
@@ -69,12 +73,20 @@ class Order(QMainWindow):
             self.orderC.tableR.setItem(row_count, 6, QTableWidgetItem(self.description))
             self.orderC.tableR.setItem(row_count, 7, QTableWidgetItem(self.salesmen))
             self.orderC.tableR.setItem(row_count, 8, QTableWidgetItem(str(self.state)))
-            self.orderC.textName.setText('')
-            self.orderC.textPhone.setText('')
-            self.orderC.textMoto.setText('')
-            self.showOptions()
-            self.orderC.textMarca.setText('')
-            self.orderC.textDescription.setPlainText('')
-            self.orderC.textSalesmen.setText('') 
+            
+           
         else:    
             print(self.name)
+    
+    def confirmOrder(self):
+        dictionary = {}
+        for row in range(self.orderC.tableR.rowCount()):
+            moto = self.orderC.TableR.item(row, 0).text() if self.orderC.TableR.item(row, 0) else ""
+            modelo = self.orderC.TableR.item(row, 0).text() if self.orderC.TableR.item(row, 0) else ""
+            marca = self.orderC.TableR.item(row, 0).text() if self.orderC.TableR.item(row, 0) else ""
+            descripcion = self.orderC.TableR.item(row, 0).text() if self.orderC.TableR.item(row, 0) else ""
+            original_generico = self.orderC.TableR.item(row, 0).text() if self.orderC.TableR.item(row, 0) else ""
+            img = self.orderC.TableR.item(row, 0).text() if self.orderC.TableR.item(row, 0) else ""
+            state = self.orderC.TableR.item(row, 0).text() if self.orderC.TableR.item(row, 0) else ""
+            abono = self.orderC.TableR.item(row, 0).text() if self.orderC.TableR.item(row, 0) else ""
+            idorder = self.orderC.TableR.item(row, 0).text() if self.orderC.TableR.item(row, 0) else ""

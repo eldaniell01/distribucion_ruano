@@ -248,7 +248,7 @@ border: 1px solid;</string>
   <widget class="QPushButton" name="buttonInsert">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>30</x>
      <y>510</y>
      <width>231</width>
      <height>41</height>
@@ -270,7 +270,7 @@ border: 1px solid;</string>
   <widget class="QPushButton" name="buttonReturn">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>450</x>
      <y>510</y>
      <width>231</width>
      <height>41</height>
@@ -287,6 +287,28 @@ border: 1px solid;</string>
    </property>
    <property name="text">
     <string>REGRESAR</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buttonConfirm">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>510</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>FiraCode Nerd Font</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(242, 242, 240);</string>
+   </property>
+   <property name="text">
+    <string>CONFIRMAR</string>
    </property>
   </widget>
  </widget>

@@ -21,12 +21,12 @@ class Querys:
         self.db.close_connection()
         return idCliente[0]
     
-    def insertOrder(self, salesmen, date_order, state, abono, cliente_clienteid):
+    def insertOrder(self, salesmen, date_order, cliente_clienteid):
         try:
             query = """
-                        INSERT INTO `order`(salesmen, date_order, state, abono, cliente_idcliente) VALUES(%s, %s, %s, %s, %s)
+                        INSERT INTO `order`(salesmen, date_order, cliente_idcliente) VALUES(%s, %s, %s)
                     """
-            values = (salesmen, date_order, state, abono, cliente_clienteid)
+            values = (salesmen, date_order, cliente_clienteid)
             self.db.execute_query(query, values)
             self.db.close_connection()
             
@@ -41,32 +41,14 @@ class Querys:
         self.db.close_connection()
         return idOrder[0]
     
-    def insertDetailOrder(self, moto, modelo, description, original_generic, img, order_idorder):
+    def insertDetailOrder(self, moto, modelo, description, original_generic, img, state, abono, order_idorder):
         try:
             query = """
-                        INSERT INTO detail_order(moto, modelo, description, original_generic, img, order_idorder) VALUES(%s, %s, %s, %s, %s, %s)
+                        INSERT INTO detail_order(moto, modelo, description, original_generic, img, state, abono, order_idorder) VALUES(%s, %s, %s, %s, %s, %s, %s,%s)
                     """
-            values = (moto, modelo, description, original_generic, img, order_idorder)
+            values = (moto, modelo, description, original_generic, img, state, abono, order_idorder)
             self.db.execute_query(query, values)
             self.db.close_connection()
         except:
             print('error')
             
-    def selectDetailOrder(self):
-        query = """
-                    SELECT iddetail_order FROM detail_order ORDER BY iddetail_order LIMIT 1
-                """
-        idOrder= self.db.execute_query(query)
-        self.db.close_connection()
-        return idOrder[0]
-    
-    def insertImages(self, img, detail_order_iddetail_order):
-        try:
-            query = """
-                        INSERT INTO images(img, detail_order_iddetail_order) VALUES(%s, %s)
-                    """
-            values = (img, detail_order_iddetail_order)
-            self.db.execute_query(query, values)
-            self.db.close_connection()
-        except:
-            print('error')
